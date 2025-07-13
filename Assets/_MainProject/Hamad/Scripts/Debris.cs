@@ -24,13 +24,15 @@ public class Debris : MonoBehaviour
 
     private void OnTriggerEnter(Collider other)
     {
+
         if (other.CompareTag("DustTool"))
         {
+            Debug.Log("dust");
             Color colorTest = m.color;
             timesTillClean--;
-            colorTest.a = colorTest.a - 30;
+            colorTest.a = colorTest.a - 10;
             m.color = colorTest;
-            if (colorTest.a < 30 || timesTillClean <= 0)
+            if (timesTillClean <= 0)
                 Destroy(gameObject);
             //become transparent a bit
             //if it is so transparent
