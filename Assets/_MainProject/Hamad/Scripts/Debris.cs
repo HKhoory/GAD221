@@ -4,7 +4,6 @@ public class Debris : MonoBehaviour
 {
 
     [SerializeField] private Renderer _material;
-    [SerializeField] private GameObject _particle;
 
     [SerializeField] private int timesTillClean;
 
@@ -34,10 +33,11 @@ public class Debris : MonoBehaviour
             colorTest.a = colorTest.a - 10;
             m.color = colorTest;
             if (timesTillClean <= 0)
-            {
                 Destroy(gameObject);
-                Instantiate(_particle, transform.position, Quaternion.identity);
-            }
+            //become transparent a bit
+            //if it is so transparent
+            //delete
+            //and maybe spawn the particles
         }
     }
 
