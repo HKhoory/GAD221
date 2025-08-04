@@ -3,6 +3,8 @@ using UnityEngine;
 public class DustBrusher : MonoBehaviour
 {
 
+    [SerializeField] private bool isInUse;
+
     [SerializeField] private float speed;
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -13,6 +15,15 @@ public class DustBrusher : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            isInUse = !isInUse;
+        }
+
+        if (!isInUse)
+            return;
+
+
         float xAxis = Input.GetAxisRaw("Horizontal");
         float zAxis = Input.GetAxis("Vertical");
 

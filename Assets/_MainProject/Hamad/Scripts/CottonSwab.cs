@@ -7,6 +7,7 @@ public class CottonSwab : MonoBehaviour
     [SerializeField] private Transform originalPos;
 
     [SerializeField] private bool isPushed;
+    [SerializeField] private bool isInUse;
 
     [SerializeField] private float speed;
     [SerializeField] private float amount; //5
@@ -29,6 +30,14 @@ public class CottonSwab : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+
+        if (Input.GetKeyDown(KeyCode.R))
+        {
+            isInUse = !isInUse;
+        }
+
+        if (!isInUse)
+            return;
 
         //if thing is stopped using
         //return to original pos
