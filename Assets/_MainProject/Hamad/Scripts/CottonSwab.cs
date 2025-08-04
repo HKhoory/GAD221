@@ -4,10 +4,17 @@ using UnityEngine.UI;
 public class CottonSwab : MonoBehaviour
 {
 
+    [SerializeField] private Transform originalPos;
+
+    [SerializeField] private bool isPushed;
+
     [SerializeField] private float speed;
-    [SerializeField] private float amount;
+    [SerializeField] private float amount; //5
+
+    [SerializeField] private float yDistance;
 
     [SerializeField] private Slider _slider;
+    [SerializeField] private Rigidbody _rb;
     
     //[SerializeField] private Collider col;
     [SerializeField] private BoxCollider _b;
@@ -15,19 +22,42 @@ public class CottonSwab : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        
+        isPushed = false;
+        _rb = GetComponent<Rigidbody>();
     }
 
     // Update is called once per frame
     void Update()
     {
+
+        //if thing is stopped using
+        //return to original pos
+        //do check if it is already there before use
+
+        if (_slider.value == 0f)
+        {
+            amount = 0f;
+        }
+        else amount = _slider.value;
+
         if (amount <= 0)
         {
-            _b.enabled = false;
+            //_b.enabled = false;
+            if (!isPushed)
+            {
+                _rb.AddForce(0, yDistance, 0);
+                isPushed = true;
+            }
+
         }
         else if (!_b.enabled)
         {
-            _b.enabled = true;
+            //_b.enabled = true;
+        }
+
+        if (Physics.Raycast(transform.position, Vector3.down, Mathf.Infinity, 0))
+        {
+
         }
 
         float xAxis = Input.GetAxisRaw("Horizontal");
@@ -45,10 +75,13 @@ public class CottonSwab : MonoBehaviour
         {
 
             _slider.value = _slider.maxValue;
+            _rb.AddForce(0, -yDistance, 0);
+            isPushed = false;
             //increase the thing
         }
         else if (other.CompareTag("Debris2"))
         {
+            _slider.value -= 50f * Time.deltaTime;
             //minus the thing
         }
     }
