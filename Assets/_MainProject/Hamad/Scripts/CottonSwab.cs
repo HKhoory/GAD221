@@ -9,7 +9,6 @@ public class CottonSwab : MonoBehaviour
     [SerializeField] private bool isPushed;
     [SerializeField] private bool isInUse;
 
-    [SerializeField] private float speed;
     [SerializeField] private float amount; //5
 
     [SerializeField] private float yDistance;
@@ -68,13 +67,6 @@ public class CottonSwab : MonoBehaviour
         {
 
         }
-
-        float xAxis = Input.GetAxisRaw("Horizontal");
-        float zAxis = Input.GetAxis("Vertical");
-
-        Vector3 pos = transform.position;
-        pos = new Vector3(pos.x + (speed * xAxis), pos.y, pos.z + (speed * zAxis));
-        transform.position = pos;
 
     }
 
