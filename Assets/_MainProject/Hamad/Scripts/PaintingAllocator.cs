@@ -5,7 +5,7 @@ public class PaintingAllocator : MonoBehaviour
 
     //copied Aisha's code to be able to debug it without causing a git conflict
 
-    [SerializeField] private Transform player, paintingContainer, workBenchContainer;
+    [SerializeField] private Transform playerContainer, paintingContainer, workBenchContainer;
     public bool equipped;
     public static bool slotFull;
 
@@ -24,7 +24,7 @@ public class PaintingAllocator : MonoBehaviour
         equipped = true;
         slotFull = true;
 
-        transform.SetParent(paintingContainer);
+        transform.SetParent(playerContainer);
         transform.localPosition = Vector3.zero;
         transform.localRotation = Quaternion.Euler(Vector3.zero);
         transform.localScale = Vector3.one;
@@ -33,12 +33,17 @@ public class PaintingAllocator : MonoBehaviour
 
     public void Place()
     {
+        if (WorkbenchStatus.isOccupied && !isNearWorkbench)
+        {
+            transform.SetParent(paintingContainer);
+            //or just return it back
+        }
+        else if (isNearWorkbench)
+        {
+            WorkbenchStatus.isOccupied = true;
+        }
 
-    }
-
-    void Start()
-    {
-
+        
     }
 
     void Update()
@@ -46,6 +51,10 @@ public class PaintingAllocator : MonoBehaviour
         if (isInProximity && Input.GetKeyDown(KeyCode.E))
         {
             Handle();
+        }
+        else if (isNearWorkbench && Input.GetKeyDown(KeyCode.E))
+        {
+            Place();
         }
         else if (!equipped && !slotFull && Input.GetKeyDown(KeyCode.E))
         {
@@ -70,7 +79,7 @@ public class PaintingAllocator : MonoBehaviour
 
         else if (other.CompareTag("Workbench"))
         {
-
+            isNearWorkbench = true;
         }
     }
 
@@ -82,7 +91,7 @@ public class PaintingAllocator : MonoBehaviour
         }
         else if (other.CompareTag("Workbench"))
         {
-
+            isNearWorkbench = false;
         }
     }
 
