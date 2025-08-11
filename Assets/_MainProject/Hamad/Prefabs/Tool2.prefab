@@ -84,7 +84,7 @@ MonoBehaviour:
   m_HandleRect: {fileID: 3623799560421751560}
   m_Direction: 0
   m_MinValue: 0
-  m_MaxValue: 1
+  m_MaxValue: 5
   m_WholeNumbers: 0
   m_Value: 0
   m_OnValueChanged:
@@ -517,6 +517,7 @@ GameObject:
   - component: {fileID: 8916293438750058601}
   - component: {fileID: 8318119171773121193}
   - component: {fileID: 2803880374804704722}
+  - component: {fileID: 2801292163909683989}
   m_Layer: 3
   m_Name: Tool2
   m_TagString: DustTool
@@ -613,7 +614,7 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.0000001, y: 5.64, z: 1.0000002}
+  m_Size: {x: 1.0000001, y: 2.64, z: 1.0000002}
   m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
 --- !u!54 &8318119171773121193
 Rigidbody:
@@ -624,7 +625,7 @@ Rigidbody:
   m_GameObject: {fileID: 6433522994419018374}
   serializedVersion: 4
   m_Mass: 1
-  m_Drag: 0
+  m_Drag: 2
   m_AngularDrag: 0.05
   m_CenterOfMass: {x: 0, y: 0, z: 0}
   m_InertiaTensor: {x: 1, y: 1, z: 1}
@@ -654,11 +655,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c751af20c31495844968d0eb4069bd82, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 0.4
-  amount: 1
+  originalPos: {fileID: 0}
+  isPushed: 0
+  isInUse: 1
+  amount: 0
+  yDistance: 120
   _slider: {fileID: 1547732508231148332}
-  col: {fileID: 0}
+  _rb: {fileID: 0}
   _b: {fileID: 8916293438750058601}
+--- !u!114 &2801292163909683989
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6433522994419018374}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ce9dd06326ff9e5438128d11bf5c5a63, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  workstationCamera: {fileID: 0}
+  originalPos: {fileID: 0}
 --- !u!1 &6578382250956407148
 GameObject:
   m_ObjectHideFlags: 0
