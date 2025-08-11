@@ -308,7 +308,7 @@ MonoBehaviour:
   active: 1
   temperature:
     m_OverrideState: 1
-    m_Value: 6
+    m_Value: 8
   tint:
     m_OverrideState: 1
     m_Value: 0
@@ -359,13 +359,13 @@ MonoBehaviour:
   active: 1
   mode:
     m_OverrideState: 1
-    m_Value: 1
+    m_Value: 2
   gaussianStart:
     m_OverrideState: 1
-    m_Value: 28.95
+    m_Value: 0.1
   gaussianEnd:
     m_OverrideState: 1
-    m_Value: 30
+    m_Value: 3.83
   gaussianMaxRadius:
     m_OverrideState: 1
     m_Value: 0.5
@@ -374,13 +374,13 @@ MonoBehaviour:
     m_Value: 1
   focusDistance:
     m_OverrideState: 1
-    m_Value: 10
+    m_Value: 1.59
   aperture:
     m_OverrideState: 1
-    m_Value: 5.6
+    m_Value: 2.1
   focalLength:
     m_OverrideState: 1
-    m_Value: 50
+    m_Value: 54
   bladeCount:
     m_OverrideState: 1
     m_Value: 5
@@ -405,13 +405,13 @@ MonoBehaviour:
   active: 1
   shadows:
     m_OverrideState: 1
-    m_Value: {r: 0.22264141, g: 0.22264141, b: 0.22264141, a: 1}
+    m_Value: {r: 0.15471691, g: 0.15471691, b: 0.15471691, a: 1}
   highlights:
     m_OverrideState: 1
-    m_Value: {r: 0.79622644, g: 0.79622644, b: 0.79622644, a: 1}
+    m_Value: {r: 0.5471698, g: 0.5471698, b: 0.5471698, a: 1}
   balance:
     m_OverrideState: 1
-    m_Value: 24
+    m_Value: 41
 --- !u!114 &1371389230300600379
 MonoBehaviour:
   m_ObjectHideFlags: 3
@@ -430,10 +430,10 @@ MonoBehaviour:
     m_Value: 2
   intensity:
     m_OverrideState: 1
-    m_Value: 0.213
+    m_Value: 0.263
   response:
     m_OverrideState: 1
-    m_Value: 0.782
+    m_Value: 1
   texture:
     m_OverrideState: 1
     m_Value: {fileID: 0}
@@ -556,7 +556,7 @@ MonoBehaviour:
   master:
     m_OverrideState: 1
     m_Value:
-      <length>k__BackingField: 2
+      <length>k__BackingField: 3
       m_Loop: 0
       m_ZeroValue: 0
       m_Range: 1
@@ -568,6 +568,15 @@ MonoBehaviour:
           value: 0
           inSlope: 0
           outSlope: 1
+          tangentMode: 0
+          weightedMode: 0
+          inWeight: 0
+          outWeight: 0
+        - serializedVersion: 3
+          time: 0.5093525
+          value: 0.5424241
+          inSlope: 0.18155654
+          outSlope: 0.18155654
           tangentMode: 0
           weightedMode: 0
           inWeight: 0
@@ -772,7 +781,7 @@ MonoBehaviour:
   active: 1
   intensity:
     m_OverrideState: 1
-    m_Value: 0.091
+    m_Value: 0.05
 --- !u!114 &7329313261868959938
 MonoBehaviour:
   m_ObjectHideFlags: 3
