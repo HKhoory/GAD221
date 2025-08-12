@@ -9,6 +9,8 @@ TagManager:
   - DustTool
   - Solution
   - Debris2
+  - Painting
+  - Placement
   layers:
   - Default
   - TransparentFX
@@ -17,7 +19,7 @@ TagManager:
   - Water
   - UI
   - Building
-  - 
+  - Interactable
   - 
   - PostProcess
   - PostProcess2
