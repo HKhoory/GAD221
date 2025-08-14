@@ -24,11 +24,11 @@ public class DustBrusher : MonoBehaviour
             return;
 
 
-        float xAxis = Input.GetAxisRaw("Horizontal");
-        float zAxis = Input.GetAxis("Vertical");
+        //float xAxis = Input.GetAxisRaw("Horizontal");
+        //float zAxis = Input.GetAxis("Vertical");
 
-        Vector3 pos = transform.position;
-        pos = new Vector3(pos.x + (speed * xAxis), pos.y, pos.z + (speed * zAxis));
-        transform.position = pos;
+        //Vector3 pos = transform.position;
+        //pos = new Vector3(pos.x + (speed * xAxis), pos.y, pos.z + (speed * zAxis));
+        //transform.position = pos;
     }
 }

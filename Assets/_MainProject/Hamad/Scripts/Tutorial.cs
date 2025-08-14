@@ -12,6 +12,8 @@ public class Tutorial : MonoBehaviour
 
     [SerializeField] private string[] lines;
 
+    [SerializeField] private int progression;
+    [SerializeField] private GameObject[] steps;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -22,17 +24,25 @@ public class Tutorial : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (!hasPicked && !hasCleaned)
+
+        switch(progression)
         {
-            tutorialText.text = lines[0];
+            case 0:
+                tutorialText.text = lines[0];
+                break;
+            case 1:
+                tutorialText.text = lines[1];
+                break;
+            default:
+                tutorialText.text = lines[2];
+                break;
+
         }
-        else if (hasPicked && !hasCleaned)
-        {
-            tutorialText.text = lines[1];
-        }
-        else
-        {
-            tutorialText.text = lines[2];
-        }
+
+    }
+
+    public void Progress()
+    {
+        progression++;
     }
 }

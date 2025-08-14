@@ -21,13 +21,27 @@ public class GameState : MonoBehaviour
         {
             playerCam.enabled = false;
             cleaningCam.enabled = true;
+            Cursor.visible = true;
+            Cursor.lockState = CursorLockMode.Confined;
             //view of the workstation
         }
         else
         {
             playerCam.enabled = true;
             cleaningCam.enabled = false;
+            Cursor.visible = false;
+            Cursor.lockState = CursorLockMode.Locked;
             //view of the player
         }
+
+        if (Input.GetKeyDown(KeyCode.P))
+        {
+            if (isCleaning)
+            {
+                isCleaning = !isCleaning;
+            }
+            else isCleaning = !isCleaning;
+        }
+
     }
 }

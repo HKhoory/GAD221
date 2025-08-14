@@ -7,6 +7,8 @@ public class Debris : MonoBehaviour
 
     [SerializeField] private int timesTillClean;
 
+    [SerializeField] private GameObject step;
+
     private Material m;
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
@@ -33,7 +35,10 @@ public class Debris : MonoBehaviour
             colorTest.a = colorTest.a - 10;
             m.color = colorTest;
             if (timesTillClean <= 0)
+            {
                 Destroy(gameObject);
+                step.SetActive(false);
+            }
             //become transparent a bit
             //if it is so transparent
             //delete
