@@ -33,6 +33,10 @@ public class InteractionSystem : MonoBehaviour
                 {
                     PlaceObject(target.transform);
                 }
+                else if(heldPainting != null && target.CompareTag("WallPlacement"))
+                {
+                   ReturnObject(target.transform);
+                }
             }
         }
 
@@ -63,6 +67,25 @@ public class InteractionSystem : MonoBehaviour
         heldPainting.transform.position = placementLocation.position;
         heldPainting.transform.rotation = placementLocation.rotation;
         heldPainting.transform.localScale = placedScale;
+
+        Rigidbody rb = heldPainting.GetComponent<Rigidbody>();
+
+        if (rb != null)
+        {
+            rb.isKinematic = false;
+            rb.detectCollisions = true;
+        }
+
+        Debug.Log("Object Placed: " + heldPainting.name);
+        heldPainting = null;
+    }
+
+    void ReturnObject(Transform placementLocation)
+    {
+        heldPainting.transform.SetParent(null);
+        heldPainting.transform.position = placementLocation.position;
+        heldPainting.transform.rotation = placementLocation.rotation;
+        heldPainting.transform.localScale = Vector3.one;
 
         Rigidbody rb = heldPainting.GetComponent<Rigidbody>();
 
