@@ -3,7 +3,7 @@ using UnityEngine;
 public class Debris : MonoBehaviour
 {
 
-    [SerializeField] private Renderer _material;
+    [SerializeField] private MeshRenderer _material;
 
     [SerializeField] private int timesTillClean;
 
@@ -11,17 +11,10 @@ public class Debris : MonoBehaviour
 
     private Material m;
 
-    // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        _material = GetComponent<Renderer>();
-        m = _material.material;
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        
+        _material.GetComponent<MeshRenderer>();
+        m.SetInt("_ZWrite", 0);
     }
 
     private void OnTriggerEnter(Collider other)
@@ -30,19 +23,20 @@ public class Debris : MonoBehaviour
         if (other.CompareTag("DustTool"))
         {
             Debug.Log("dust");
-            Color colorTest = m.color;
             timesTillClean--;
-            colorTest.a = colorTest.a - 10;
-            m.color = colorTest;
+            Color originColor = _material.material.color;
+            originColor.a = _material.material.color.a - 0.40f;
+            //m.color = colorTest;
+            _material.material.color = new Color(_material.material.color.r, _material.material.color.g, _material.material.color.b, originColor.a);
             if (timesTillClean <= 0)
             {
-                Destroy(gameObject);
+                if (step != null)
                 step.SetActive(false);
+                //spawn particles
+                Destroy(gameObject);
+                
             }
-            //become transparent a bit
-            //if it is so transparent
-            //delete
-            //and maybe spawn the particles
+            
         }
     }
 

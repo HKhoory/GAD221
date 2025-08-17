@@ -676,6 +676,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 1424562144200960246, guid: eb313f6592cd97b4689f94af4ae22e0f, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 6583678679691272097, guid: eb313f6592cd97b4689f94af4ae22e0f, type: 3}
       propertyPath: m_LocalPosition.x
       value: -6.62
@@ -954,6 +958,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 8242643992894613040, guid: 9bfcf23d0018acc4d960995a8dee02e2, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8671299720783337099, guid: 9bfcf23d0018acc4d960995a8dee02e2, type: 3}
+      propertyPath: m_Enabled
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9209161486772338624, guid: 9bfcf23d0018acc4d960995a8dee02e2, type: 3}
@@ -1690,6 +1698,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 3528244656890333020, guid: 880d9915b729afc4ab78ac55ff05e1f7, type: 3}
+      propertyPath: m_CastShadows
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3528244656890333020, guid: 880d9915b729afc4ab78ac55ff05e1f7, type: 3}
+      propertyPath: 'm_Materials.Array.data[0]'
+      value: 
+      objectReference: {fileID: 2100000, guid: 9bce3a54634e7904bad38f72dc97c4c0, type: 2}
     - target: {fileID: 3898206925560189835, guid: 880d9915b729afc4ab78ac55ff05e1f7, type: 3}
       propertyPath: m_Name
       value: Debris
@@ -1743,9 +1759,17 @@ PrefabInstance:
       value: 0.32
       objectReference: {fileID: 0}
     - target: {fileID: 7746437196423938333, guid: 880d9915b729afc4ab78ac55ff05e1f7, type: 3}
+      propertyPath: step
+      value: 
+      objectReference: {fileID: 1548007311}
+    - target: {fileID: 7746437196423938333, guid: 880d9915b729afc4ab78ac55ff05e1f7, type: 3}
       propertyPath: _particle
       value: 
       objectReference: {fileID: 6053359735732251655, guid: 266d978c67ab9c845a833af8dd1606b9, type: 3}
+    - target: {fileID: 7746437196423938333, guid: 880d9915b729afc4ab78ac55ff05e1f7, type: 3}
+      propertyPath: timesTillClean
+      value: 6
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -1941,7 +1965,7 @@ PrefabInstance:
       objectReference: {fileID: 79832509}
     - target: {fileID: 3623799560421751560, guid: d02a731cc73e29c4e98c8e143205b439, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 6433522994419018374, guid: d02a731cc73e29c4e98c8e143205b439, type: 3}
       propertyPath: m_Name
@@ -1950,6 +1974,10 @@ PrefabInstance:
     - target: {fileID: 8318119171773121193, guid: d02a731cc73e29c4e98c8e143205b439, type: 3}
       propertyPath: m_Drag
       value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8469025571256944156, guid: d02a731cc73e29c4e98c8e143205b439, type: 3}
+      propertyPath: m_Enabled
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8916293438750058601, guid: d02a731cc73e29c4e98c8e143205b439, type: 3}
       propertyPath: m_Size.y
