@@ -8,6 +8,7 @@ public class Debris : MonoBehaviour
     [SerializeField] private int timesTillClean;
 
     [SerializeField] private GameObject step;
+    [SerializeField] private GameObject resultParticle;
 
     private Material m;
 
@@ -25,13 +26,14 @@ public class Debris : MonoBehaviour
             Debug.Log("dust");
             timesTillClean--;
             Color originColor = _material.material.color;
-            originColor.a = _material.material.color.a - 0.40f;
+            originColor.a = _material.material.color.a - 0.30f;
             //m.color = colorTest;
             _material.material.color = new Color(_material.material.color.r, _material.material.color.g, _material.material.color.b, originColor.a);
-            if (timesTillClean <= 0)
+            if (timesTillClean <= 0 || originColor.a <= 0)
             {
                 if (step != null)
                 step.SetActive(false);
+                Instantiate(resultParticle, transform.position, Quaternion.identity);
                 //spawn particles
                 Destroy(gameObject);
                 
